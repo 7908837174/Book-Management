@@ -1,0 +1,262 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+ 
+#title {
+    text-align: center;
+    font-size: 2em;
+    padding: 20px;
+    background-color: #0004f8;
+    color: white;
+    font-weight: bold;
+}
+#title:hover{
+     font-style: italic;
+     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     background: linear-gradient(to right,green,rgb(212, 88, 26),gold,rgb(67, 67, 174), red, yellow,rgb(182, 8, 188));
+        -webkit-background-clip: text;
+        color: transparent;
+}
+ 
+nav {
+    background-color: #7d15ec;
+    color:#bed2d7;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.1em;
+}
+
+nav a:hover {
+    color: #f1f1f1;
+    background-color: rgb(20, 20, 20);
+    border-radius: 1%;
+    border: 2px solid tomato;
+    padding: 5px 10px 10px 10px;
+    margin-bottom: 5px;
+}
+ 
+#search-bar-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+#search-bar {
+    padding: 10px;
+    width: 60%;
+    font-size: 1.2em;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#search-btn {
+    height:45px;
+    width: 90px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
+}
+#search-btn:hover{
+    cursor:pointer;
+    background-color:black;
+    color:rgb(231, 247, 247);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border:2px solid tomato;
+}
+#search-bar:hover {
+    border:2px solid gold;
+}
+
+ .container {
+    margin: 20px;
+}
+ 
+.category-section {
+    margin-bottom: 40px;
+}
+
+.category-section h2 {
+    font-size: 2em;
+    margin: 20px 0;
+    color: #3010e7;
+}
+
+.category {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.book-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(85, 238, 3, 0.1);
+    background-color: white;
+    /* transition: transform 0.3s ease-in-out; */
+   /* display: inline; */
+    /* text-align: center; */
+}
+
+.book-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+ 
+.book-overlay {
+    position: absolute;
+    top: 25%;
+    right: 20%;
+    left: 20%;
+    background-color: rgba(4, 188, 255, 0.5);
+    opacity: 0;
+    border:1px solid tomato;
+    padding: 15px;
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.book-item:hover .book-overlay {
+    opacity: 1;
+}
+
+.complete-btn, .click-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 1em;
+}
+
+.complete-btn:hover, .click-btn:hover {
+    background-color: #555;
+}
+ 
+h1#select {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+}
+ 
+@media screen and (max-width: 768px) {
+    #search-bar {
+        width: 80%;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 1em;
+    }
+
+    #title {
+        font-size: 1.5em;
+    }
+
+    h1#select {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #search-bar {
+        width: 90%;
+    }
+
+    nav a {
+        font-size: 0.9em;
+        margin: 0 5px;
+    }
+
+    h1#select {
+        font-size: 1.8em;
+    }
+}
+ 
+
+.book-item:hover {
+    transform: scale(1.05);
+}
+#first{
+    background-color:rgb(168, 200, 202);
+    padding: 15px 25px 25px 25px;
+}
+#second{
+    background-color:rgb(229, 199, 199);
+    padding: 15px 25px 25px 25px;
+}
+#third{
+    background-color:rgb(229, 199, 199);
+    padding: 15px 25px 25px 25px;
+}
+#fourth{
+    background-color:rgb(229, 199, 199);
+    padding: 15px 25px 25px 25px;
+}
+#fifth{
+    background-color:rgb(229, 199, 199);
+    padding: 15px 25px 25px 25px;
+}
+#sixth{
+    background-color:rgb(229, 199, 199);
+    padding: 15px 25px 25px 25px;
+}
+#seventh{
+    background-color:rgb(229, 199, 199);
+    padding: 15px 25px 25px 25px;
+}
+#eighth{
+    background-color:rgb(229, 199, 199);
+    padding: 15px 25px 25px 25px; 
+}
+#nineth{
+    background-color:rgb(229, 199, 199);
+    padding: 15px 25px 25px 25px; 
+}
+#tenth{
+    background-color:rgb(229, 199, 199);
+    padding: 15px 25px 25px 25px; 
+}
+
+#titlename{
+    background-color:hsl(180, 84%, 41%);
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 2em;
+    padding: 20px;
+    color: rgb(20, 12, 12);
+    font-weight: bold;
+}
+#heading{
+    background-color:hsl(180, 84%, 41%);
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 22px;
+    padding: 10px;
+    color: rgb(20, 12, 12);
+    font-weight: bold;
+}
