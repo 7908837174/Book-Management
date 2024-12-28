@@ -6,7 +6,40 @@
     <title>Book Management System</title>
     <link rel="stylesheet" href="Management.css">
 </head>
-
+<style>
+.hidden { 
+    display: none;
+ } 
+#confirmation-navbar { 
+    position:fixed;
+    margin-left:380px;
+    top:0;
+    width: 50%;
+    height: 20%; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    background-color: #c8ddd7;
+    color:rgb(33, 29, 33);
+    padding: 50px 40px 30px 50px;
+    box-shadow: 0 2px 10px rgba(89, 45, 85, 0.1); 
+    text-align: center; 
+    z-index: 1000; 
+}
+#confirm-logout,#cancel-logout{
+    margin: 15px;
+    font-size: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    padding: 10px;
+    border-radius: 10%;
+    border:1px solid;
+}
+#confirm-logout:hover,#cancel-logout:hover{
+    cursor:pointer;
+    background-color:rgb(121, 195, 226);
+    border:1px solid transparent ;
+}
+</style>
 <body>
 
 <section>
@@ -18,15 +51,21 @@
     <a href="Createbook.html">Create Book</a> |
     <a href="view-books.html">View All Books</a> |
     <a href="Profile.html">Profile</a> |
-    <a href="logout.html">Logout</a>
+    <a href="#" id="lgout">Logout</a>
+    <div id="confirmation-navbar" class="hidden">
+         <p>Do you want to logout?</p>
+          <button id="confirm-logout">Yes</button> 
+          <button id="cancel-logout">No</button>
+    </div>
 </nav>
  
 <section id="search-bar-section">
     <input type="text" id="search-bar" placeholder="Search books...">
-    <button id="search-btn" onclick="searchBooks()">Search</button>
+   <button id="search-btn" onclick="searchBooks()">
+       Search</button>
 </section>
 
-<h1 id="select">Collection of Books</h1>
+<h1 id="select"><b>Collection of Books</b></h1>
 <div class="container">
     
     <!-- Category 1: Physics -->
@@ -43,7 +82,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -54,7 +93,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -65,7 +104,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -76,7 +115,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn"> Read Book</button>
                 </div>
             </div>
 
@@ -87,7 +126,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn"> Read Book</button>
                 </div>
             </div>
 
@@ -98,7 +137,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn"> Read Book</button>
                 </div>
             </div>
 
@@ -109,7 +148,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn"> Read Book</button>
                 </div>
             </div>
 
@@ -120,7 +159,7 @@
                 </div>
                  <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Ride</button>
+                    <button class="click-btn"> Ride Book</button>
                 </div>
             </div>
 
@@ -131,7 +170,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn"> Read Book</button>
                 </div>
             </div>
 
@@ -142,7 +181,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn"> Read Book</button>
                 </div>
             </div>
             <!-- Add more-->
@@ -158,10 +197,10 @@
         <div class="category">
             <div class="book-item">
                 <div id="heading">
-                <img src="https://m.media-amazon.com/images/I/61mjWoSNcRL._AC_UF1000,1000_QL80_.jpg" style="height:350px;"alt="Chemistry Book">
+                <img src="https://m.media-amazon.com/images/I/61mjWoSNcRL.AC_UF1000,1000_QL80.jpg" style="height:350px;"alt="Chemistry Book">
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
                 <p>CHEMISTRY - 9</p>
             </div>
@@ -173,7 +212,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -184,7 +223,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             
@@ -195,7 +234,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -206,7 +245,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -217,7 +256,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -228,7 +267,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -239,7 +278,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -250,7 +289,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -261,7 +300,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
         </div>
@@ -282,7 +321,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -294,7 +333,7 @@
                 
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             
@@ -305,7 +344,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -316,7 +355,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -327,7 +366,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 
                 </div>
             </div>
@@ -339,7 +378,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -350,7 +389,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -361,7 +400,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -372,7 +411,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn"> Read Book</button>
                 </div>
             </div>
 
@@ -383,7 +422,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
         </div>
@@ -404,7 +443,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -415,7 +454,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -426,7 +465,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -437,7 +476,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -448,7 +487,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -459,7 +498,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -470,7 +509,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -481,7 +520,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -492,7 +531,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div> 
 
@@ -503,7 +542,7 @@
             </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
         </div>
@@ -525,7 +564,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -536,7 +575,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -547,7 +586,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -558,7 +597,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -569,7 +608,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -580,7 +619,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -591,7 +630,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -602,7 +641,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div> 
 
@@ -613,7 +652,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -623,7 +662,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
         </div>
@@ -648,7 +687,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -659,7 +698,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -670,7 +709,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -681,7 +720,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -692,7 +731,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -704,7 +743,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -714,7 +753,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -724,7 +763,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -734,7 +773,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -744,7 +783,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
         </div>
@@ -768,7 +807,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -779,7 +818,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -790,7 +829,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -801,7 +840,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -812,7 +851,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -824,7 +863,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -834,7 +873,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -844,7 +883,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -854,7 +893,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -864,7 +903,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
         </div>
@@ -887,7 +926,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -898,7 +937,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -909,7 +948,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -920,7 +959,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -931,7 +970,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -943,7 +982,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -953,7 +992,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -963,7 +1002,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -973,7 +1012,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -983,7 +1022,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
         </div>
@@ -1002,12 +1041,12 @@
         <div class="category">
             <div class="book-item">
                 <DIV id="heading">
-                <img src="  https://1.bp.blogspot.com/-idcciX9qbUI/X94BOWyBSTI/AAAAAAAAJcY/jKtkS2AjXTALeML0UE6iy8ZLKMbaJEh8ACLcBGAsYHQ/s1360/61z%252B9WJfXtL._AC_SL1500_.jpg" style="height:370px">
+                <img src="  https://1.bp.blogspot.com/-idcciX9qbUI/X94BOWyBSTI/AAAAAAAAJcY/jKtkS2AjXTALeML0UE6iy8ZLKMbaJEh8ACLcBGAsYHQ/s1360/61z%252B9WJfXtL.AC_SL1500.jpg" style="height:370px">
                 <p>Machine Learning</p>
                 </DIV>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -1018,7 +1057,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -1029,7 +1068,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -1040,7 +1079,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -1051,7 +1090,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -1063,7 +1102,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
            
@@ -1075,7 +1114,7 @@
 
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -1086,7 +1125,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -1097,7 +1136,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -1108,7 +1147,7 @@
                 </DIV>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
     
@@ -1132,7 +1171,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -1143,7 +1182,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -1154,7 +1193,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -1165,7 +1204,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -1176,7 +1215,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
 
@@ -1188,7 +1227,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -1198,7 +1237,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -1208,7 +1247,7 @@
               </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -1218,7 +1257,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             <div class="book-item">
@@ -1228,7 +1267,7 @@
                 </div>
                 <div class="book-overlay">
                     <button class="complete-btn">Complete</button>
-                    <button class="click-btn">Click to Read</button>
+                    <button class="click-btn">Read Book</button>
                 </div>
             </div>
             
@@ -1238,4 +1277,21 @@
 </div>
 </body>
 <script src="Management.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => { 
+    const logoutLink = document.getElementById('lgout');
+     const confirmationNavbar = document.getElementById('confirmation-navbar');
+      const confirmLogoutBtn = document.getElementById('confirm-logout'); 
+      const cancelLogoutBtn = document.getElementById('cancel-logout'); logoutLink.addEventListener('click', (event) => {
+         event.preventDefault(); 
+         confirmationNavbar.classList.remove('hidden'); 
+        });
+         confirmLogoutBtn.addEventListener('click', () => { 
+            window.location.href = 'index.html';
+         }); 
+         cancelLogoutBtn.addEventListener('click', () => { confirmationNavbar.classList.add('hidden');
+            
+          }); 
+        });
+</script>
 </html>
