@@ -112,11 +112,10 @@
   </div>
 
   <script>
-    // Function to handle the form submission
+    
     document.getElementById('edit-book-form').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent page reload on form submission
-
-      // Get the form values
+      event.preventDefault();  
+ 
       const title = document.getElementById('title').value;
       const author = document.getElementById('author').value;
       const isbn = document.getElementById('isbn').value;
@@ -124,14 +123,14 @@
       const description = document.getElementById('description').value;
       const image = document.getElementById('image').value;
       
-      // Get the selected genres
+     
       const genres = [];
       if (document.getElementById('fantasy').checked) genres.push('Fantasy');
       if (document.getElementById('sci-fi').checked) genres.push('Science fiction');
       if (document.getElementById('poetry').checked) genres.push('French Poetry');
       if (document.getElementById('action').checked) genres.push('Action');
       
-      // Create an object to store the book data
+      
       const bookData = {
         title,
         author,
@@ -142,21 +141,21 @@
         genres
       };
 
-      // Save the data in localStorage
+      
       localStorage.setItem('bookData', JSON.stringify(bookData));
 
-      // Alert and refresh the page after saving the data
+    
       alert('Book details updated successfully!');
-      location.reload(); // Refresh the page to reflect the saved data
+      location.reload();  
     });
 
-    // Function to pre-fill the form with data from localStorage (if available)
+    
     window.onload = function() {
       const savedData = localStorage.getItem('bookData');
       if (savedData) {
         const bookData = JSON.parse(savedData);
 
-        // Pre-fill the form fields with the saved data
+        
         document.getElementById('title').value = bookData.title || '';
         document.getElementById('author').value = bookData.author || '';
         document.getElementById('isbn').value = bookData.isbn || '';
@@ -164,7 +163,7 @@
         document.getElementById('description').value = bookData.description || '';
         document.getElementById('image').value = bookData.image || '';
 
-        // Pre-fill the genres checkboxes
+      
         if (bookData.genres) {
           bookData.genres.forEach(genre => {
             document.getElementById(genre.toLowerCase()).checked = true;
