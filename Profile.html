@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,13 +11,13 @@
           justify-content: center;
           align-items: center;
           height: 100vh;
-        background-color: #8086d2;
+        background-color:#e5e5f3;
          margin: 0;
          padding: 0;
     }
 
     #profile-container {
-      background-color: rgb(146, 176, 109);
+      background-color:  rgb(207, 222, 191);
       border-radius: 8px;
       width: 400px;
       padding: 20px;
@@ -69,13 +69,12 @@
 <body>
    
 <div id="profile-container">
-  <a href="Management.html" class="button" style="background-color: rgb(254, 254, 254); " >Home</a>
-    <span class="close" id="close-profile">✖️</span>
+    <span class="close" id="close-profile">✖</span>
     <div class="profile-header">
-      <h1>🎟️User Profile🎟️</h1><hr>
+      <h1>🎟User Profile🎟</h1><hr>
     </div>
     <div class="profile-info">
-      <img src="useravtar.avif" class="profile-avatar">
+      <img src="https://img.freepik.com/premium-vector/school-boy-vector-illustration_38694-902.jpg" style="height:200px;width:200px" class="profile-avatar">
       <h2>John Doe</h2><hr>
       <p>Email: john.doe@example.com</p><hr>
     </div>
@@ -104,7 +103,7 @@
           }
         }
       }
-      closeProfile.onclick = function() { window.location.href = "Book.html"; }
+      closeProfile.onclick = function() { window.location.href = "Management.html"; }
 
        
       for (var i = 0; i < bookCompletedCheckboxes.length; i++) {
