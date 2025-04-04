@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logout</title>
+  <link rel="stylesheet" href="logout.css">
+  <script>
+   function logout() {
+     localStorage.clear();
+      sessionStorage.clear();
+    }
+   document.addEventListener("DOMContentLoaded", function() {
+      var modal = document.getElementById("myModal");
+      var btn = document.getElementById("btn");
+      var span = document.getElementsByClassName("close")[0];
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      document.getElementById("yes-button").onclick = function() {
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.href = "login.html";
+      }
+      document.getElementById("cancel-button").onclick = function() {
+        modal.style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    });
+
+  </script>
+</head>.
+<body>
+
+  <div>
+    <h1>Logging out...</h1>
+    <button id="btn">Log Out</button>
+  </div>
+  
+  <div id="myModal" class="modal"> 
+    <div class="modal-content"> 
+      <span class="close">❌</span>
+       <b><p>Do you want to log out?</p></b>
+       <button id="yes-button" class="notification-button">Yes</button>
+        <button id="cancel-button" class="notification-button">Cancel</button>
+       </div> 
+      </div>
+   
+</body>
+</html>
