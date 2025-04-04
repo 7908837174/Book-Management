@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Book Management</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #a5bbd2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    text-align: left;
+}
+
+input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+input[type="text"]:focus, input[type="email"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+p {
+    font-size: 14px;
+    color: #ff0000;
+    margin-top: 10px;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input[type="text"], button {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+ 
+<body>
+    <div class="container">
+        <h2>Book Management Login</h2>
+        <form id="loginForm">
+            <label for="username">Name:</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+
+            <label for="Email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your Email" required>
+
+            <label for="otp">OTP:</label>
+            <input type="text" id="otp" placeholder="Enter OTP" disabled required>
+            
+            <button type="button" id="generateOtp">Generate OTP</button>
+            <button type="submit" id="login" disabled>Login</button>
+        </form>
+        <p id="otpMessage"></p>
+        <p id="message"></p>
+    </div>
+
+    <script> 
+        document.getElementById('generateOtp').addEventListener('click', function () { 
+            const otp = Math.floor(1000 + Math.random() * 1000); 
+            const otpMessageElement = document.getElementById('otpMessage');
+            otpMessageElement.textContent = `Your OTP is: ${otp}`; 
+            const otpElement = document.getElementById('otp');
+            otpElement.disabled = false;
+            otpElement.focus(); 
+            this.disabled = true; 
+            setTimeout(function () {
+                otpMessageElement.textContent = '';  
+                otpElement.value = '';  
+                otpElement.disabled = true;  
+                document.getElementById('generateOtp').disabled = false;  
+                document.getElementById('login').disabled = true;  
+                document.getElementById('message').textContent = "OTP has expired!";
+            }, 100000); 
+
+            otpElement.addEventListener('input', function () {
+                const enteredOtp = otpElement.value;
+                if (enteredOtp === otp.toString()) {
+                    document.getElementById('login').disabled = false;  
+                    document.getElementById('message').textContent = "";  
+                } else {
+                    document.getElementById('login').disabled = true; 
+                    document.getElementById('message').textContent = "Incorrect OTP!";
+                }
+            });
+        }); 
+
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const otpValue = document.getElementById('otp').value;
+            const correctOtp = document.getElementById('otp').value;
+            if (otpValue === correctOtp) {
+                alert("Login successful!");
+                window.location.href = "Management.html"; // Redirect to the main page
+            } else {
+                document.getElementById('message').textContent = "Incorrect OTP!";
+            }
+        });
+    </script>
+</body>
+</html>
