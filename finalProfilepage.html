@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Management</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        background-color:#e5e5f3;
+         margin: 0;
+         padding: 0;
+    }
+
+    #profile-container {
+      background-color:  rgb(207, 222, 191);
+      border-radius: 8px;
+      width: 400px;
+      padding: 20px;
+      position: relative;
+    }
+
+    .profile-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-info {
+      text-align: center;
+    }
+
+    .profile-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .book-management {
+      margin-top: 20px;
+    }
+
+    .book-management ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .book-management li {
+      background-color: #f9f9f9;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+      display: none;  
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 28px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+   
+<div id="profile-container">
+    <span class="close" id="close-profile">✖️</span>
+    <div class="profile-header">
+      <h1>🎟️User Profile🎟️</h1><hr>
+    </div>
+    <div class="profile-info">
+      <img src="https://img.freepik.com/premium-vector/school-boy-vector-illustration_38694-902.jpg" style="height:200px;width:200px" class="profile-avatar">
+      <h2>John Doe</h2><hr>
+      <p>Email: john.doe@example.com</p><hr>
+    </div>
+    <div class="book-management">
+      <h2>Book Management</h2>
+      <ul>
+        <li><input type="checkbox" class="book-completed"> Book 1: "The Great Gatsby" - Status: Reading</li>
+        <li><input type="checkbox" class="book-completed"> Book 2: "1984" - Status: Completed</li>
+        <li><input type="checkbox" class="book-completed"> Book 3: "To Kill a Mockingbird" - Status: Want to Read</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var profileContainer = document.getElementById("profile-container");
+      var closeProfile = document.getElementById("close-profile");
+      var bookCompletedCheckboxes = document.getElementsByClassName("book-completed");
+
+      for (var i = 0; i < bookCompletedCheckboxes.length; i++) {
+        bookCompletedCheckboxes[i].onclick = function() {
+          if (this.checked) {
+            this.parentElement.style.display = "list-item";
+          } else {
+            this.parentElement.style.display = "none";
+          }
+        }
+      }
+      closeProfile.onclick = function() { window.location.href = "Management.html"; }
+
+       
+      for (var i = 0; i < bookCompletedCheckboxes.length; i++) {
+        if (bookCompletedCheckboxes[i].nextSibling.nodeValue.includes("Status: Completed")) {
+          bookCompletedCheckboxes[i].checked = true;
+          bookCompletedCheckboxes[i].parentElement.style.display = "list-item";
+        }
+      }
+    });
+  </script>
+</body>
+</html>
